@@ -1,0 +1,25 @@
+<h1>Add a show to your watch list</h1>
+
+<%= form_with(model: @show) do |form| %>
+    <div>
+        <%= form.label :name %>
+        <%= form.text_field :name %>
+    </div>
+
+    <div>
+        <%= form.label :description %>
+        <%= form.text_area :description %>
+    </div>
+
+    <div>
+        <%= form.label :image_path %>
+        <%= form.text_field :image_path %>
+    </div>
+
+    <div>
+        <%= form.label :seasons %>
+        <%= form.number_field :seasons %>
+    </div>
+
+    <%= form.submit "Add to Watch List" %>
+<% end %>
