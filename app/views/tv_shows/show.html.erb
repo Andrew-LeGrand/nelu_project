@@ -1,0 +1,9 @@
+<h1><%= @show.name %></h1>
+<h3>Seasons: <%= @show.seasons %></h3>
+<p><%= @show.description %></p>
+<div>
+<%= image_tag @show.image_path %>
+</div>
+
+<%= link_to "Edit", edit_tv_show_path(@show) %>
+<%= button_to "Destroy", @show, method: :delete %>

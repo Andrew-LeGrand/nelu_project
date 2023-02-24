@@ -4,13 +4,18 @@
     <div>
         <h2><%= show.name %></h2>
     </div>
-    <div>
-        <%= show.description %>
-    </div>
+
     <div>
         <p>Seasons: <%= show.seasons %></p>
     </div>
+
     <div>
-        <%= image_tag show.image_path %>
+        <p>Description: <%= show.description %></p>
+    </div>
+
+    <div>
+        <%= link_to tv_show_path(show) do %>
+            <%= image_tag("#{show.image_path}", height: '200') %>
+        <% end %>
     </div>
 <% end %>
