@@ -2,6 +2,14 @@
 
 <%= render @genre %>
 
+<% @genre.tv_shows.each do |show| %>
+  <h2>
+    <%= link_to tv_show_path(show) do %>
+      <%= show.name %>
+    <% end %>
+  </h2>
+
+<% end %>
 <div>
   <%= link_to "Edit this genre", edit_genre_path(@genre) %> |
   <%= link_to "Back to genres", genres_path %>

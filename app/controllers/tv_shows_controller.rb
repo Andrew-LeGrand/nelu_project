@@ -17,7 +17,7 @@ class TvShowsController < ApplicationController
 
         if @show.save
             flash[:notice] = "TV Show was successfully added to your Watch List!"
-            redirect_to tv_shows_path
+            redirect_to @show
         else
             flash[:notice] = "There was an error when processing this TV Show..."
             render :new, status: :unprocessable_entity
@@ -51,7 +51,7 @@ class TvShowsController < ApplicationController
 
     # Permits attributes of TV Show
     def tv_show_params
-        params.require(:tv_show).permit(:name, :description, :image_path, :seasons)
+        params.require(:tv_show).permit(:name, :description, :image_path, :seasons, genre_ids: [])
     end
 
     # Grabs ahold of the TV Show we want to view

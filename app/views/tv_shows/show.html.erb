@@ -2,7 +2,13 @@
 <h3>Seasons: <%= @show.seasons %></h3>
 <p><%= @show.description %></p>
 <div>
-<%= image_tag @show.image_path %>
+    <%= image_tag("#{@show.image_path}", height: '300') %>
+</div>
+
+<div>
+    <% @show.genres.each do |genre| %>
+        <b style="margin-right: 6px"><%= genre.name %></b>
+    <% end %>
 </div>
 
 <%= link_to "Edit", edit_tv_show_path(@show) %>

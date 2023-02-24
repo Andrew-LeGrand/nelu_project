@@ -32,5 +32,11 @@
         <%= form.number_field :seasons %>
     </div>
 
+    <div>
+        <%= form.label :genres %>
+    </div>
+    <div>
+        <%= form.collection_select(:genre_ids, Genre.all, :id, :name, {}, {multiple: true}) %>
+    </div>
     <%= form.submit %>
 <% end %>
